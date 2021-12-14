@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="total">0</div>
+    <button id="add">+</button>
+    <button id="subtract">-</button>
+    <button id="mult_2">x2</button>
+    <button id="div_2">/2</button>
+    <button id="mult_5">x5</button>
+    <button id="div_5">/5</button>
+    <button id="reset">RESET</button>
+    <script>
+        // Select Total / Create Variables
+        let total = document.getElementById('total');
+        
+        let count = 0
+        let countTwo = 1
+        // Create Six Functions
+        function add(){
+            count++
+            update(count)
+        }
 
+        function subtract(){
+            count--
+            update(count)
+        }
+
+        function mult_2(){
+            countTwo *= 2
+            total.textContent = countTwo
+            alert(countTwo)
+        }
+        
+        function div_2(){
+            countTwo /= 2
+            update(countTwo)
+        }
+
+        function mult_5(){
+            countTwo *= 5
+            total.textContent = countTwo
+            update(countTwo)
+        }
+
+        function div_5(){
+            countTwo /= 5
+            total.textContent = countTwo
+            update(countTwo)
+        }
+
+        function reset() {
+            count = 0
+            total.textContent = count
+            update(count)
+        }
+
+        function update () {
+            total.textContent = count
+            alert(count)
+        }
+
+        // Attach Functions to Buttons
+        document.getElementById('add').onclick =add;
+        document.getElementById('subtract').onclick= subtract;
+        document.getElementById('mult_2').onclick= mult_2;
+        document.getElementById('div_2').onclick= div_2;
+        document.getElementById('mult_5').onclick= mult_5;
+        document.getElementById('div_5').onclick= div_5;
+        document.getElementById('reset').onclick= reset;
+    </script>
+</body>
+</html>
