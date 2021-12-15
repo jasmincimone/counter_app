@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="color-list">
+
+    </ul>
+    <button id="generate-color">Color Me!</button>
+    <button id="reset">RESET</button>
+    <script>
+        const COLORS_ARRAY = ["red", "yellow", "magenta", "cyan", "blue", "black", "gray", "teal", "green", "purple", "violet"]
+       
+        let parent = document.getElementById('color-list');
+        //Create Function
+
+        function colorGen() {
+
+            let colorChange = COLORS_ARRAY[Math.floor(Math.random() * COLORS_ARRAY.length)];
+            let colorName= colorChange;
+            
+            document.getElementById("color-list").textContent = colorChange;
+            document.body.style.backgroundColor =  colorChange;
+
+            colorName = document.createElement('li');
+            colorChange.textContent = colorName;
+            parent.appendChild(colorChange);
+        }
+           
+
+        // Function should = update background color
+        // Create li
+        // add text content of the color's name
+        // append li to the color-list
+
+        //Create Function = Reset
+        // Should remove all list children
+        // Should set bg color to white
+
+        function reset() {
+            while(parent.firstChild) {
+                parent.removeChild(parent.firstChild)
+            }
+            document.body.style.backgroundColor = "white";
+        }
+
+        //BONUS: Create Function
+        //temporarily changes background color to the element hovered upon
+
+        // Attach Function to Button
+        document.getElementById('generate-color').onclick = colorGen;
+        document.getElementById('reset').onclick = reset;
+    </script>
+
+</body>
+</html>
